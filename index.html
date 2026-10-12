@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BlackBox is built from Orbit Store's code</title>
+<meta name="description" content="BlackBox's PS5 payload is compiled from Orbit Store's GPL source code and released without source, licence or credit. Evidence anyone can reproduce from the public release files.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BlackBox is built from Orbit Store's code">
+<meta property="og:description" content="BlackBox's own debug information lists 28 of Orbit Store's source files. It is released without source, licence or credit. Check it yourself.">
+<meta property="og:url" content="https://saawant12.github.io/blackbox-gpl/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://saawant12.github.io/blackbox-gpl/">
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #1c1d21;
+  --muted: #5d606b;
+  --line: #e2e3e8;
+  --panel: #f5f6f8;
+  --code: #f0f1f4;
+  --link: #2156c9;
+  --accent: #b42318;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111215;
+    --text: #e8e9ed;
+    --muted: #a0a3ad;
+    --line: #2b2d33;
+    --panel: #1a1b20;
+    --code: #1f2026;
+    --link: #8ab4ff;
+    --accent: #ff8a7a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111215;
+  --text: #e8e9ed;
+  --muted: #a0a3ad;
+  --line: #2b2d33;
+  --panel: #1a1b20;
+  --code: #1f2026;
+  --link: #8ab4ff;
+  --accent: #ff8a7a;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.01em; }
+h2 { font-size: 1.45rem; margin: 48px 0 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+h3 { font-size: 1.12rem; margin: 32px 0 8px; }
+p, ul, ol { margin: 0 0 16px; }
+li { margin-bottom: 6px; }
+a { color: var(--link); }
+.meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 28px; }
+.lede { font-size: 1.12rem; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.86em; }
+code { background: var(--code); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+pre {
+  background: var(--code);
+  padding: 14px 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+pre code { background: none; padding: 0; overflow-wrap: normal; font-size: 1em; }
+.scroll { overflow-x: auto; margin: 0 0 16px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td code { white-space: nowrap; }
+code.hash { white-space: normal; overflow-wrap: anywhere; }
+.hashes { margin: 0 0 16px; }
+.date { color: var(--muted); white-space: nowrap; }
+ul.files { columns: 3 200px; column-gap: 16px; font-size: 0.92rem; list-style: none; padding: 0; margin: 10px 0 4px; }
+ul.files li { margin: 0 0 4px; break-inside: avoid; }
+ul.files code { background: none; padding: 0; white-space: nowrap; overflow-wrap: normal; }
+@media (max-width: 640px) {
+  .hashes thead { display: none; }
+  .hashes tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .hashes td { display: block; padding: 0; border: 0; }
+  .hashes td + td { margin-top: 4px; }
+}
+details { background: var(--panel); border-radius: 8px; padding: 10px 14px; margin: 0 0 16px; }
+summary { cursor: pointer; font-weight: 600; }
+blockquote { margin: 0 0 16px; padding: 0 0 0 14px; border-left: 3px solid var(--line); color: var(--muted); font-style: italic; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; }
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.7rem; }
+  main { padding-top: 32px; }
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>BlackBox is built from Orbit Store's code</h1>
+<p class="meta">Published by the <a href="https://github.com/saawant12/orbit-store-ps5">Orbit Store</a> project on 12 October 2026. Checked against every BlackBox release still online: v1.0.5, v1.0.6, v1.0.7 and v1.0.8.</p>
+
+<p class="lede"><a href="https://github.com/D3ATHLY/blackbox">BlackBox</a> is a PS5 store whose payload, <code>blackbox.elf</code>, is compiled from Orbit Store's source code. It is released without source code, without a licence file and without saying that it is based on Orbit.</p>
+
+<p>Orbit is free software under the GNU GPL, version 3 or later. Anyone may copy it, change it and release their own version. The licence asks one thing in return: whoever releases a changed version must share its source under the same licence. BlackBox has not done that.</p>
+
+<p>Everything below comes from BlackBox's own public release files and can be checked with standard tools. <a href="#check-it-yourself">Check it yourself</a>.</p>
+
+<h2 id="what-were-asking-for">What we're asking for</h2>
+
+<p>Forks are welcome; that's the point of the GPL. To keep releasing a changed version of Orbit, BlackBox needs to:</p>
+<ol>
+  <li><strong>Publish the complete source code</strong> for every <code>blackbox.elf</code> and <code>PPSA01453.ffpkg</code> it has released, including its own changes and build scripts (GPLv3 section 6). The TV package contains the payload too.</li>
+  <li><strong>Release it under GPL-3.0-or-later</strong>, with the licence text (sections 4 and 5).</li>
+  <li><strong>Say that it is a modified version of Orbit Store</strong> and keep Orbit's notices (sections 4 and 5a).</li>
+</ol>
+
+<h2 id="findings">What the release files show</h2>
+
+<p>BlackBox's payload is not stripped. It still carries the debug information the compiler wrote, which records the name of every source file it was built from. That makes these checks possible without decompiling anything.</p>
+
+<h3 id="source-files">1. BlackBox's own build record lists Orbit's source files</h3>
+<p><code>blackbox.elf</code> v1.0.8 names 32 application source files. 28 of them are Orbit's, including <code>orbit.h</code>, Orbit's main header. The other four, <code>custom.c</code>, <code>lease.c</code>, <code>messages.c</code> and <code>presence.c</code>, are BlackBox's additions. v1.0.5 and v1.0.7 list the same 28 Orbit files, with three additions (no <code>lease.c</code>).</p>
+<details>
+<summary>The 28 Orbit files in BlackBox v1.0.8</summary>
+<ul class="files">
+  <li><code>backend/api.c</code></li>
+  <li><code>backend/art.c</code></li>
+  <li><code>backend/autoboot.c</code></li>
+  <li><code>backend/browser.c</code></li>
+  <li><code>backend/browser_match.c</code></li>
+  <li><code>backend/browser_platform.c</code></li>
+  <li><code>backend/browser_scan.c</code></li>
+  <li><code>backend/browser_services.c</code></li>
+  <li><code>backend/catalog.c</code></li>
+  <li><code>backend/diagnostics.c</code></li>
+  <li><code>backend/favorites.c</code></li>
+  <li><code>backend/library.c</code></li>
+  <li><code>backend/main.c</code></li>
+  <li><code>backend/process_identity.c</code></li>
+  <li><code>backend/provider_network.c</code></li>
+  <li><code>backend/providers.c</code></li>
+  <li><code>backend/ps5_fs.c</code></li>
+  <li><code>backend/queue.c</code></li>
+  <li><code>backend/sources.c</code></li>
+  <li><code>backend/state.c</code></li>
+  <li><code>backend/storage.c</code></li>
+  <li><code>backend/transfer.c</code></li>
+  <li><code>backend/transfer_writer.c</code></li>
+  <li><code>backend/tvapp.c</code></li>
+  <li><code>backend/updates.c</code></li>
+  <li><code>launcher/install.c</code></li>
+  <li><code>launcher/platform_ps5.c</code></li>
+  <li><code>orbit.h</code></li>
+</ul>
+</details>
+
+<h3 id="functions">2. Most of its functions are Orbit's</h3>
+<p>The debug information places 248 of BlackBox v1.0.8's functions in its application source files. Compared with Orbit 0.9.1:</p>
+<div class="scroll">
+<table>
+  <thead><tr><th></th><th class="num">Functions</th></tr></thead>
+  <tbody>
+    <tr><td>In BlackBox's application files</td><td class="num">248</td></tr>
+    <tr><td>Same name, in the same Orbit source file</td><td class="num">214</td></tr>
+    <tr><td>Of those, compiled to the same instructions</td><td class="num">110</td></tr>
+    <tr><td>Only in BlackBox</td><td class="num">34</td></tr>
+  </tbody>
+</table>
+</div>
+<p>For scale, two consecutive Orbit releases, 0.9.0 and 0.9.1, share 236 of their 240 same-named functions instruction for instruction. Independently written software doesn't put 214 functions under the same names in the same 28 files. The full table, file by file, is in <a href="output/v1.0.8.txt">output/v1.0.8.txt</a>.</p>
+
+<h3 id="launcher">3. Orbit's launcher, with the name changed</h3>
+<p>Orbit's <code>launcher/install.c</code>, line 15:</p>
+<pre><code>static const unsigned char owner[] = "Orbit Store ORBT00001 launcher v1\n";</code></pre>
+<p>The same string in BlackBox:</p>
+<pre><code>BlackBoxv2 BLKB00001 launcher v1</code></pre>
+<p>7 of the 9 functions in BlackBox's <code>launcher/install.c</code> compile to the same instructions as Orbit's. In v1.0.5 and v1.0.6, the home-screen app manifest the launcher writes still used Orbit's own app ID:</p>
+<pre><code>BlackBoxv2 BLKB00001 launcher v1
+  "applicationCategoryType": 65536,
+  "titleId": "ORBT00001",</code></pre>
+<p>That line is gone from v1.0.7 onwards.</p>
+
+<h3 id="names">4. Orbit's names are still inside</h3>
+<p>BlackBox v1.0.8 contains functions such as <code>orbit_launcher_ensure</code>, <code>orbit_process_identity</code>, <code>orbit_request_stop</code> and <code>orbit_runtime_image</code>. Its web interface tells users to copy <code>PPSA99177.ffpkg</code> to <code>/data/homebrew/</code>. That is the file name of Orbit's TV app; BlackBox's own TV app is <code>PPSA01453.ffpkg</code>.</p>
+
+<h3 id="build">5. Orbit's build setup and interface text</h3>
+<ul>
+  <li><strong>Build directories.</strong> Both programs were built in <code>/work</code>, and BlackBox's dependencies were built in <code>/tmp/orbit-deps/</code>, the folder Orbit's <code>tools/build-deps.sh</code> creates.</li>
+  <li><strong>Interface text.</strong> 96 of the 466 longer messages (30 or more characters) in Orbit 0.9.1's English interface appear word for word in BlackBox. For example:</li>
+</ul>
+<blockquote>Keep the partial file to resume later, or delete only the partial file. Downloaded files are never deleted through history cleanup.</blockquote>
+
+<h3 id="licence">6. No source, no licence</h3>
+<p>BlackBox's README says it is licensed under GPL-3.0-or-later and refers to "the <code>LICENSE</code> file". The repository contains only <code>README.md</code>, <code>catalog</code> and <code>updates</code>. There is no licence file and no source code. Every release contains only <code>blackbox.elf</code> and <code>PPSA01453.ffpkg</code>.</p>
+
+<h2 id="not-claimed">What this page doesn't claim</h2>
+<ul>
+  <li><strong>Which Orbit version BlackBox started from.</strong> Its code is about equally close to Orbit 0.8.0, 0.9.x and 1.0.0. We compare against 0.9.1, the last Orbit release before the oldest BlackBox files still online were uploaded.</li>
+  <li><strong>Who makes BlackBox.</strong> This page is about the software, not any person.</li>
+  <li><strong>Anything about BlackBox's catalogue</strong> or the games it lists.</li>
+</ul>
+
+<h2 id="check-it-yourself">Check it yourself</h2>
+<p>You need Linux with <code>binutils</code>, <code>curl</code> and <code>python3</code>:</p>
+<pre><code>git clone --depth 1 https://github.com/saawant12/blackbox-gpl
+sh blackbox-gpl/check.sh v1.0.8</code></pre>
+<p>On macOS, or in WSL on Windows, run it in Docker:</p>
+<pre><code>docker run --rm -v "$PWD:/w" -w /w debian:trixie sh -c \
+  'apt-get update -qq &amp;&amp; apt-get install -y -qq binutils binutils-x86-64-linux-gnu curl ca-certificates python3 git &amp;&amp;
+   git clone --depth 1 https://github.com/saawant12/blackbox-gpl &amp;&amp; sh blackbox-gpl/check.sh v1.0.8'</code></pre>
+<p>Without git, download these five files from this page into one folder and run <code>sh check.sh</code>: <a href="check.sh">check.sh</a>, <a href="compare.py">compare.py</a>, <a href="ui_strings.py">ui_strings.py</a>, <a href="SHA256SUMS">SHA256SUMS</a> and <a href="orbit-v0.9.1-en.json">orbit-v0.9.1-en.json</a>.</p>
+<p><code>check.sh</code> downloads BlackBox's release and Orbit 0.9.1 from GitHub and compares their SHA-256 with <code>SHA256SUMS</code>. It then runs <code>readelf</code>, <code>strings</code>, <code>nm</code> and <code>objdump</code>, plus two short Python scripts: <code>compare.py</code> for functions and <code>ui_strings.py</code> for interface text. The downloaded files are only read, never run. Pass another tag (<code>v1.0.5</code>, <code>v1.0.6</code>, <code>v1.0.7</code>) to check an older release.</p>
+<p>Orbit's <code>launcher/install.c</code> and <code>i18n/en.json</code> are in <code>orbit-store-0.9.1-source-bundle.zip</code>, attached to the <a href="https://github.com/saawant12/orbit-store-ps5/releases/tag/v0.9.1">Orbit 0.9.1 release</a>. <code>orbit-v0.9.1-en.json</code> is a copy of that <code>en.json</code>.</p>
+<p>Our full results: <a href="output/v1.0.5.txt">v1.0.5</a> · <a href="output/v1.0.7.txt">v1.0.7</a> · <a href="output/v1.0.8.txt">v1.0.8</a>.</p>
+
+<h2 id="files">Files examined</h2>
+<table class="hashes">
+  <thead><tr><th>BlackBox release and file</th><th>SHA-256</th></tr></thead>
+  <tbody>
+    <tr><td>v1.0.8 <code>blackbox.elf</code> <span class="date">(9 Oct 2026)</span></td><td><code class="hash">b78ad32a58aa219c089fb2d809dbdfe84041ae88f7a2890e589ee003ea8d908b</code></td></tr>
+    <tr><td>v1.0.8 <code>PPSA01453.ffpkg</code> <span class="date">(9 Oct 2026)</span></td><td><code class="hash">fd153d081533fcfdbbcc28b626cec516c7a162fb4ba9ee078449cfc1d336d547</code></td></tr>
+    <tr><td>v1.0.7 <code>blackbox.elf</code> <span class="date">(8 Oct 2026)</span></td><td><code class="hash">e87d48c0fe7ff388cc2744583ad4fcfa2c885c435c944c012ed800384d054094</code></td></tr>
+    <tr><td>v1.0.7 <code>PPSA01453.ffpkg</code> <span class="date">(8 Oct 2026)</span></td><td><code class="hash">bb8f833c751e80ef7234ac856fb83da8a647e5a4d59e3e24f30091eb7370523c</code></td></tr>
+    <tr><td>v1.0.5 and v1.0.6 <code>blackbox.elf</code></td><td><code class="hash">598817f13466c35ff00e629ec2828565af79e5bea557e66e50c95206051ba291</code></td></tr>
+    <tr><td>v1.0.5 and v1.0.6 <code>PPSA01453.ffpkg</code></td><td><code class="hash">58f68c42b467ed1066b7b6f2a31c98fe0b55d2b67705a126a86f74e0d2ffa0a3</code></td></tr>
+  </tbody>
+</table>
+<p>The files under v1.0.5 and v1.0.6 are identical. They were uploaded on 8 October 2026, after both releases were published, and don't match the checksums BlackBox's update feed listed for v1.0.5 or v1.0.6. BlackBox's feed history also lists releases 1.0.0-beta.1 to 1.0.4 from 6–7 October 2026; their files are no longer online.</p>
+<p>Orbit Store 0.9.1, <code>orbit_store.elf</code>: <code class="hash">a7ff23dfc0ed5cd7d5c4b05c7e0c0a4e1ea2ee2c91742e00d754122917f8f318</code></p>
+
+<h2 id="thanks">Thanks</h2>
+<p>This check started from a report in <a href="https://github.com/saawant12/orbit-store-ps5/issues/58">Orbit issue #58</a>. The numbers on this page come from our own runs of the script above.</p>
+
+<footer>
+  <p>Source of this page: <a href="https://github.com/saawant12/blackbox-gpl">github.com/saawant12/blackbox-gpl</a>. Its history shows every change made to it.</p>
+</footer>
+
+</main>
+</body>
+</html>

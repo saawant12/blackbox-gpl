@@ -1,0 +1,134 @@
+
+== Files
+598817f13466c35ff00e629ec2828565af79e5bea557e66e50c95206051ba291  blackbox-v1.0.5.elf (same file the page examined)
+a7ff23dfc0ed5cd7d5c4b05c7e0c0a4e1ea2ee2c91742e00d754122917f8f318  orbit-v0.9.1.elf (same file the page examined)
+f30ce9a79678f182287f1d558364d5ba9162d1872616b74c5d3da5ed0ed0334e  orbit-v0.9.1-en.json (same file the page examined)
+
+== 1. Application source files named in blackbox-v1.0.5.elf's own debug information
+backend/api.c  (also in Orbit v0.9.1)
+backend/art.c  (also in Orbit v0.9.1)
+backend/autoboot.c  (also in Orbit v0.9.1)
+backend/browser.c  (also in Orbit v0.9.1)
+backend/browser_match.c  (also in Orbit v0.9.1)
+backend/browser_platform.c  (also in Orbit v0.9.1)
+backend/browser_scan.c  (also in Orbit v0.9.1)
+backend/browser_services.c  (also in Orbit v0.9.1)
+backend/catalog.c  (also in Orbit v0.9.1)
+backend/custom.c  (BlackBox only)
+backend/diagnostics.c  (also in Orbit v0.9.1)
+backend/favorites.c  (also in Orbit v0.9.1)
+backend/library.c  (also in Orbit v0.9.1)
+backend/main.c  (also in Orbit v0.9.1)
+backend/messages.c  (BlackBox only)
+backend/presence.c  (BlackBox only)
+backend/process_identity.c  (also in Orbit v0.9.1)
+backend/provider_network.c  (also in Orbit v0.9.1)
+backend/providers.c  (also in Orbit v0.9.1)
+backend/ps5_fs.c  (also in Orbit v0.9.1)
+backend/queue.c  (also in Orbit v0.9.1)
+backend/sources.c  (also in Orbit v0.9.1)
+backend/state.c  (also in Orbit v0.9.1)
+backend/storage.c  (also in Orbit v0.9.1)
+backend/transfer.c  (also in Orbit v0.9.1)
+backend/transfer_writer.c  (also in Orbit v0.9.1)
+backend/tvapp.c  (also in Orbit v0.9.1)
+backend/updates.c  (also in Orbit v0.9.1)
+launcher/install.c  (also in Orbit v0.9.1)
+launcher/platform_ps5.c  (also in Orbit v0.9.1)
+orbit.h  (also in Orbit v0.9.1)
+
+== 2. Build directories recorded by the compiler
+blackbox-v1.0.5.elf:
+  /tmp/orbit-deps/libmicrohttpd-1.0.1/src/microhttpd
+  /work
+orbit-v0.9.1.elf:
+  /tmp/orbit-deps/libmicrohttpd-1.0.1/src/microhttpd
+  /work
+
+== 3. Launcher ownership string (Orbit's launcher/install.c, line 15)
+orbit-v0.9.1.elf: Orbit Store ORBT00001 launcher v1
+blackbox-v1.0.5.elf: BlackBoxv2 BLKB00001 launcher v1
+
+== 4. Orbit names still in blackbox-v1.0.5.elf
+orbit_ca orbit_launcher_ensure orbit_launcher_ensure_at orbit_launcher_last_error orbit_launcher_record_error orbit_launcher_registration_method orbit_process_identity orbit_process_state orbit_request_stop orbit_runtime_image orbit_runtime_image_end orbit_version_compare 
+Orbit's TV app ID PPSA99177 appears 8 times
+
+== 5. Functions compared with Orbit v0.9.1
+blackbox-v1.0.5.elf: 242 application functions in 30 source files
+  214 have the same name, in the same file, in orbit-v0.9.1.elf
+  110 of those have the same instructions
+
+source file                  functions same name same code
+backend/api.c                       13        12         5
+backend/art.c                        7         7         6
+backend/autoboot.c                  18        18         4
+backend/browser.c                   10        10         6
+backend/browser_match.c              1         1         1
+backend/browser_platform.c           6         6         6
+backend/browser_scan.c               1         1         1
+backend/browser_services.c           1         1         1
+backend/catalog.c                   17        17         7
+backend/custom.c                     3         0         0
+backend/diagnostics.c                6         6         1
+backend/favorites.c                  2         2         0
+backend/library.c                   32        27        18
+backend/main.c                       5         5         3
+backend/messages.c                   6         0         0
+backend/presence.c                   3         0         0
+backend/process_identity.c           2         2         2
+backend/provider_network.c           3         3         3
+backend/providers.c                  8         5         2
+backend/ps5_fs.c                     6         6         6
+backend/queue.c                     11        10         2
+backend/sources.c                    4         4         2
+backend/state.c                     10        10         5
+backend/storage.c                    9         4         0
+backend/transfer.c                  17        17         6
+backend/transfer_writer.c            6         6         0
+backend/tvapp.c                     10        10         5
+backend/updates.c                   12        11         7
+launcher/install.c                   9         9         7
+launcher/platform_ps5.c              4         4         4
+
+Only in blackbox-v1.0.5.elf:
+  backend/api.c: route
+  backend/custom.c: collect
+  backend/custom.c: head_headers
+  backend/custom.c: job_create_custom_locked
+  backend/library.c: cache_store
+  backend/library.c: https_get
+  backend/library.c: icon_receive
+  backend/library.c: library_icon
+  backend/library.c: prospero_icon
+  backend/messages.c: check
+  backend/messages.c: collect
+  backend/messages.c: messages_json_locked
+  backend/messages.c: messages_start
+  backend/messages.c: messages_stop
+  backend/messages.c: worker
+  backend/presence.c: presence_online
+  backend/presence.c: presence_start
+  backend/presence.c: presence_stop
+  backend/providers.c: custom_format
+  backend/providers.c: custom_transfer_url_ok
+  backend/providers.c: custom_url_ok
+  backend/queue.c: job_create_release_locked
+  backend/storage.c: inspect
+  backend/storage.c: mounted_here
+  backend/storage.c: orphan_add_locked
+  backend/storage.c: orphan_sweep_locked
+  backend/storage.c: storage_skipped
+  backend/updates.c: compare_version
+
+== 6. Orbit v0.9.1 interface text in blackbox-v1.0.5.elf
+orbit-v0.9.1-en.json: 466 sentences of 30 or more characters
+blackbox-v1.0.5.elf: 96 found word for word, for example:
+  A related copy is in Library. Its format, filename or version does not confirm a match for this option.
+  Connect another writable drive, or configure another scan location in ShadowMount.
+  Keep the partial file to resume later, or delete only the partial file. Downloaded files are never deleted through history cleanup.
+  Refresh drives in Storage to check available space.
+  Storage management needs a compatible ShadowMount version.
+
+== 7. Licence and source in the BlackBox repository
+licence detected by GitHub: None
+top-level files: README.md, catalog, updates

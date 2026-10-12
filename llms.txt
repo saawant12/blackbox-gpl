@@ -29,6 +29,10 @@ Forks of Orbit are allowed under the GPL. To comply, BlackBox needs to:
 - Who makes BlackBox; the page is about the software, not any person.
 - Anything about BlackBox's game catalogue.
 
+## Donations
+
+BlackBox collects donations through Buy Me a Coffee (buymeacoffee.com/blackboxps). Orbit Store is free and doesn't accept donations or payments; money given to BlackBox doesn't reach Orbit's developers.
+
 ## Page and evidence
 
 - [Evidence page](https://saawant12.github.io/blackbox-gpl/): full findings, method and checksums.

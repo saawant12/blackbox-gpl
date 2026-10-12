@@ -1,5 +1,5 @@
 #!/bin/sh
-# Reproduces the findings on https://saawant12.github.io/blackbox-gpl/
+# Reproduces the findings on https://blackboxisorbit.com/
 #
 #   sh check.sh [BlackBox release tag]      default v1.0.8
 #

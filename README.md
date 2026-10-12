@@ -1,6 +1,6 @@
 # BlackBox is built from Orbit Store's code
 
-**Read the page: https://saawant12.github.io/blackbox-gpl/**
+**Read the page: https://blackboxisorbit.com/**
 
 BlackBox's PS5 payload is compiled from [Orbit Store](https://github.com/saawant12/orbit-store-ps5)'s GPL source code and released without source, licence or credit. This repository holds the page and everything needed to check it.
 

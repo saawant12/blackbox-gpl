@@ -35,14 +35,14 @@ BlackBox collects donations through Buy Me a Coffee (buymeacoffee.com/blackboxps
 
 ## Page and evidence
 
-- [Evidence page](https://saawant12.github.io/blackbox-gpl/): full findings, method and checksums.
-- [check.sh](https://saawant12.github.io/blackbox-gpl/check.sh): downloads the releases, verifies their SHA-256 and runs every check with binutils and Python.
-- [compare.py](https://saawant12.github.io/blackbox-gpl/compare.py): compares application functions by source file, name and instructions.
-- [ui_strings.py](https://saawant12.github.io/blackbox-gpl/ui_strings.py): counts Orbit interface sentences found word for word.
-- [SHA256SUMS](https://saawant12.github.io/blackbox-gpl/SHA256SUMS): hashes of every file examined.
-- [Results for v1.0.8](https://saawant12.github.io/blackbox-gpl/output/v1.0.8.txt): full output, file by file.
-- [Results for v1.0.7](https://saawant12.github.io/blackbox-gpl/output/v1.0.7.txt)
-- [Results for v1.0.5](https://saawant12.github.io/blackbox-gpl/output/v1.0.5.txt)
+- [Evidence page](https://blackboxisorbit.com/): full findings, method and checksums.
+- [check.sh](https://blackboxisorbit.com/check.sh): downloads the releases, verifies their SHA-256 and runs every check with binutils and Python.
+- [compare.py](https://blackboxisorbit.com/compare.py): compares application functions by source file, name and instructions.
+- [ui_strings.py](https://blackboxisorbit.com/ui_strings.py): counts Orbit interface sentences found word for word.
+- [SHA256SUMS](https://blackboxisorbit.com/SHA256SUMS): hashes of every file examined.
+- [Results for v1.0.8](https://blackboxisorbit.com/output/v1.0.8.txt): full output, file by file.
+- [Results for v1.0.7](https://blackboxisorbit.com/output/v1.0.7.txt)
+- [Results for v1.0.5](https://blackboxisorbit.com/output/v1.0.5.txt)
 - [Page source](https://github.com/saawant12/blackbox-gpl): repository with the full change history.
 
 ## Optional

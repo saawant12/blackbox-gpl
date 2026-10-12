@@ -30,7 +30,8 @@ The downloaded files are only read, never run.
 | [`social.png`](social.png) | Preview image for links shared on social media |
 | [`sitemap.xml`](sitemap.xml), [`robots.txt`](robots.txt) | Sitemap and crawler rules for search engines |
 | [`CNAME`](CNAME) | The custom domain for GitHub Pages |
-| [`favicon.svg`](favicon.svg), [`apple-touch-icon.png`](apple-touch-icon.png) | Orbit Store's app icon |
+| [`favicon.svg`](favicon.svg), [`favicon.ico`](favicon.ico), [`icon-192.png`](icon-192.png), [`apple-touch-icon.png`](apple-touch-icon.png) | Orbit Store's app icon |
+| [`404.html`](404.html) | Page shown for addresses that don't exist |
 | [`check.sh`](check.sh) | Downloads the releases, verifies them against `SHA256SUMS` and runs every check |
 | [`compare.py`](compare.py) | Compares application functions by source file, name and instructions |
 | [`ui_strings.py`](ui_strings.py) | Counts Orbit's interface sentences found word for word |

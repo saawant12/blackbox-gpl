@@ -50,6 +50,7 @@ BlackBox collects donations through Buy Me a Coffee (buymeacoffee.com/blackboxps
 - [Results for v1.0.8](https://blackboxisorbit.com/output/v1.0.8.txt): full output, file by file.
 - [Results for v1.0.7](https://blackboxisorbit.com/output/v1.0.7.txt)
 - [Results for v1.0.5](https://blackboxisorbit.com/output/v1.0.5.txt)
+- [Archived copies of BlackBox's pages](https://github.com/saawant12/blackbox-gpl/blob/main/archives.md): Wayback Machine copies of its GitHub pages, update feed, API data, X posts and Buy Me a Coffee page, saved 12 October 2026.
 - [Page source](https://github.com/saawant12/blackbox-gpl): repository with the full change history.
 
 ## Optional

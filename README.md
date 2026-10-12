@@ -38,6 +38,7 @@ The downloaded files are only read, never run.
 | [`SHA256SUMS`](SHA256SUMS) | Hashes of every file examined |
 | [`orbit-v0.9.1-en.json`](orbit-v0.9.1-en.json) | Orbit 0.9.1's English interface text, copied from its source bundle |
 | [`output/`](output) | Our full results for v1.0.5, v1.0.7 and v1.0.8 |
+| [`archives.md`](archives.md) | Wayback Machine copies of BlackBox's pages |
 
 ## Mirrors
 

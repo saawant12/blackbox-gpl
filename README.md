@@ -1,4 +1,4 @@
-# BlackBox is built from Orbit Store's code
+# BlackBox Store is built from Orbit Store's code
 
 **Read the page: https://blackboxisorbit.com/**
 

@@ -1,0 +1,47 @@
+# BlackBox is built from Orbit Store's code
+
+> BlackBox, a PS5 homebrew store, ships a payload (`blackbox.elf`) compiled from Orbit Store's GPL-3.0-or-later source code. It is released without source code, without a licence file and without saying that it is based on Orbit. Published by the Orbit Store project on 12 October 2026. Every finding below reproduces from BlackBox's public release files with standard tools.
+
+BlackBox's repository is https://github.com/D3ATHLY/blackbox. Its README also links https://github.com/BlackBoxPS5/blackbox, which redirects there. Orbit Store's official repository is https://github.com/saawant12/orbit-store-ps5. BlackBox is not affiliated with Orbit Store.
+
+## Findings
+
+These were checked on 12 October 2026 against every BlackBox release still online (v1.0.5, v1.0.6, v1.0.7 and v1.0.8), and compared with Orbit Store 0.9.1.
+
+- **Source files.** BlackBox v1.0.8's own debug information names 32 application source files. 28 of them are Orbit's, including `orbit.h` and `launcher/install.c`. The other four (`custom.c`, `lease.c`, `messages.c`, `presence.c`) are BlackBox's additions.
+- **Functions.** BlackBox v1.0.8 has 248 application functions. 214 of them have the same name, in the same source file, as in Orbit 0.9.1, and 110 of those compile to the same instructions. Only 34 are unique to BlackBox. For comparison, Orbit 0.9.0 and 0.9.1 share 236 of 240.
+- **Launcher.** Orbit's launcher string `Orbit Store ORBT00001 launcher v1` appears in BlackBox as `BlackBoxv2 BLKB00001 launcher v1`. 7 of the 9 functions in `launcher/install.c` compile to the same instructions. In v1.0.5 and v1.0.6, the launcher's app manifest still used Orbit's app ID `ORBT00001`.
+- **Orbit names.** It contains functions named `orbit_launcher_ensure`, `orbit_process_identity`, `orbit_request_stop` and `orbit_runtime_image`. Its interface tells users to copy `PPSA99177.ffpkg`, the file name of Orbit's TV app; BlackBox's own TV app is `PPSA01453.ffpkg`.
+- **Build setup.** Both were built in `/work`. BlackBox's dependencies were built in `/tmp/orbit-deps/`, the folder Orbit's build script creates.
+- **Interface text.** 96 of the 466 longer English interface messages in Orbit 0.9.1 appear word for word in BlackBox.
+- **Licence.** BlackBox's README claims GPL-3.0-or-later and refers to a `LICENSE` file. The repository has no licence file and no source code. Its releases contain only `blackbox.elf` and `PPSA01453.ffpkg`.
+
+## What is being asked
+
+Forks of Orbit are allowed under the GPL. To comply, BlackBox needs to:
+- publish the complete source for every release;
+- include the GPL licence;
+- state that it is a modified version of Orbit Store.
+
+## What is not claimed
+
+- Which Orbit version BlackBox started from.
+- Who makes BlackBox; the page is about the software, not any person.
+- Anything about BlackBox's game catalogue.
+
+## Page and evidence
+
+- [Evidence page](https://saawant12.github.io/blackbox-gpl/): full findings, method and checksums.
+- [check.sh](https://saawant12.github.io/blackbox-gpl/check.sh): downloads the releases, verifies their SHA-256 and runs every check with binutils and Python.
+- [compare.py](https://saawant12.github.io/blackbox-gpl/compare.py): compares application functions by source file, name and instructions.
+- [ui_strings.py](https://saawant12.github.io/blackbox-gpl/ui_strings.py): counts Orbit interface sentences found word for word.
+- [SHA256SUMS](https://saawant12.github.io/blackbox-gpl/SHA256SUMS): hashes of every file examined.
+- [Results for v1.0.8](https://saawant12.github.io/blackbox-gpl/output/v1.0.8.txt): full output, file by file.
+- [Results for v1.0.7](https://saawant12.github.io/blackbox-gpl/output/v1.0.7.txt)
+- [Results for v1.0.5](https://saawant12.github.io/blackbox-gpl/output/v1.0.5.txt)
+- [Page source](https://github.com/saawant12/blackbox-gpl): repository with the full change history.
+
+## Optional
+
+- [Orbit Store](https://github.com/saawant12/orbit-store-ps5): the original project, GPL-3.0-or-later, with source bundles on every release.
+- [Orbit issue #58](https://github.com/saawant12/orbit-store-ps5/issues/58): the report that started this check.

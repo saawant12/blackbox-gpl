@@ -3,14 +3,71 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BlackBox is built from Orbit Store's code</title>
+<title>BlackBox (PS5) is built from Orbit Store's code</title>
 <meta name="description" content="BlackBox's PS5 payload is compiled from Orbit Store's GPL source code and released without source, licence or credit. Evidence anyone can reproduce from the public release files.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#111215">
+<link rel="canonical" href="https://saawant12.github.io/blackbox-gpl/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111215'/%3E%3Crect x='9' y='9' width='14' height='14' rx='2' fill='none' stroke='%23ff8a7a' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="sitemap" type="application/xml" href="sitemap.xml">
+<link rel="alternate" type="text/plain" title="Plain-text summary for AI assistants" href="llms.txt">
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="Orbit Store">
 <meta property="og:title" content="BlackBox is built from Orbit Store's code">
 <meta property="og:description" content="BlackBox's own debug information lists 28 of Orbit Store's source files. It is released without source, licence or credit. Check it yourself.">
 <meta property="og:url" content="https://saawant12.github.io/blackbox-gpl/">
-<meta name="twitter:card" content="summary">
-<link rel="canonical" href="https://saawant12.github.io/blackbox-gpl/">
+<meta property="og:image" content="https://saawant12.github.io/blackbox-gpl/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BlackBox is built from Orbit Store's code: its own debug info lists 28 of Orbit's source files, 214 of 248 functions match Orbit by file and name, released with no source and no licence.">
+<meta property="article:published_time" content="2026-10-12">
+<meta property="article:modified_time" content="2026-10-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BlackBox is built from Orbit Store's code">
+<meta name="twitter:description" content="BlackBox's own debug information lists 28 of Orbit Store's source files. It is released without source, licence or credit. Check it yourself.">
+<meta name="twitter:image" content="https://saawant12.github.io/blackbox-gpl/social.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "BlackBox is built from Orbit Store's code",
+  "description": "BlackBox's PS5 payload is compiled from Orbit Store's GPL source code and released without source, licence or credit. Evidence anyone can reproduce from the public release files.",
+  "url": "https://saawant12.github.io/blackbox-gpl/",
+  "mainEntityOfPage": "https://saawant12.github.io/blackbox-gpl/",
+  "image": "https://saawant12.github.io/blackbox-gpl/social.png",
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "Orbit Store",
+    "url": "https://github.com/saawant12/orbit-store-ps5"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Orbit Store",
+    "url": "https://github.com/saawant12/orbit-store-ps5"
+  },
+  "about": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "BlackBox",
+      "applicationCategory": "PS5 homebrew store",
+      "operatingSystem": "PlayStation 5",
+      "url": "https://github.com/D3ATHLY/blackbox"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Orbit Store",
+      "applicationCategory": "PS5 homebrew store",
+      "operatingSystem": "PlayStation 5",
+      "url": "https://github.com/saawant12/orbit-store-ps5",
+      "license": "https://www.gnu.org/licenses/gpl-3.0.html"
+    }
+  ],
+  "keywords": "BlackBox, BlackBox PS5, Orbit Store, PS5 homebrew, GPL-3.0, source code"
+}
+</script>
 <style>
 :root {
   --bg: #ffffff;
@@ -93,6 +150,13 @@ ul.files code { background: none; padding: 0; white-space: nowrap; overflow-wrap
 details { background: var(--panel); border-radius: 8px; padding: 10px 14px; margin: 0 0 16px; }
 summary { cursor: pointer; font-weight: 600; }
 blockquote { margin: 0 0 16px; padding: 0 0 0 14px; border-left: 3px solid var(--line); color: var(--muted); font-style: italic; }
+.posts { display: grid; gap: 20px; margin: 0 0 16px; }
+.posts figure { margin: 0; background: var(--panel); border-radius: 10px; padding: 12px; }
+.posts img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.posts figcaption { margin-top: 10px; font-size: 0.95rem; color: var(--muted); }
+.posts figcaption strong { color: var(--text); }
+.video { position: relative; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; background: #000; }
+.video iframe, .video video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; }
 @media (max-width: 520px) {
   body { font-size: 16px; }
@@ -201,6 +265,17 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
 <h3 id="licence">6. No source, no licence</h3>
 <p>BlackBox's README says it is licensed under GPL-3.0-or-later and refers to "the <code>LICENSE</code> file". The repository contains only <code>README.md</code>, <code>catalog</code> and <code>updates</code>. There is no licence file and no source code. Every release contains only <code>blackbox.elf</code> and <code>PPSA01453.ffpkg</code>.</p>
 
+<!-- What users say: published once the first post is added.
+<h2 id="what-users-say">What users say</h2>
+<p>Posts from PS5 homebrew users who compared the two. These are their own words; the evidence above stands on its own.</p>
+<div class="posts">
+  <figure>
+    <a href="media/FILE.png"><img src="media/FILE.png" alt="DESCRIPTION" loading="lazy" width="W" height="H"></a>
+    <figcaption><strong>Reddit, r/SUBREDDIT, D MONTH 2026.</strong> CAPTION <a href="URL">Original post</a>.</figcaption>
+  </figure>
+</div>
+-->
+
 <h2 id="not-claimed">What this page doesn't claim</h2>
 <ul>
   <li><strong>Which Orbit version BlackBox started from.</strong> Its code is about equally close to Orbit 0.8.0, 0.9.x and 1.0.0. We compare against 0.9.1, the last Orbit release before the oldest BlackBox files still online were uploaded.</li>
@@ -240,7 +315,7 @@ sh blackbox-gpl/check.sh v1.0.8</code></pre>
 <p>This check started from a report in <a href="https://github.com/saawant12/orbit-store-ps5/issues/58">Orbit issue #58</a>. The numbers on this page come from our own runs of the script above.</p>
 
 <footer>
-  <p>Source of this page: <a href="https://github.com/saawant12/blackbox-gpl">github.com/saawant12/blackbox-gpl</a>. Its history shows every change made to it.</p>
+  <p>Source of this page: <a href="https://github.com/saawant12/blackbox-gpl">github.com/saawant12/blackbox-gpl</a>. Its history shows every change made to it. Plain-text summary: <a href="llms.txt">llms.txt</a>.</p>
 </footer>
 
 </main>

@@ -26,6 +26,9 @@ The downloaded files are only read, never run.
 | File | What it is |
 |---|---|
 | [`index.html`](index.html) | The page |
+| [`llms.txt`](llms.txt) | Plain-text summary for AI assistants |
+| [`social.png`](social.png) | Preview image for links shared on social media |
+| [`sitemap.xml`](sitemap.xml) | Sitemap for search engines |
 | [`check.sh`](check.sh) | Downloads the releases, verifies them against `SHA256SUMS` and runs every check |
 | [`compare.py`](compare.py) | Compares application functions by source file, name and instructions |
 | [`ui_strings.py`](ui_strings.py) | Counts Orbit's interface sentences found word for word |

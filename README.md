@@ -28,7 +28,8 @@ The downloaded files are only read, never run.
 | [`index.html`](index.html) | The page |
 | [`llms.txt`](llms.txt) | Plain-text summary for AI assistants |
 | [`social.png`](social.png) | Preview image for links shared on social media |
-| [`sitemap.xml`](sitemap.xml) | Sitemap for search engines |
+| [`sitemap.xml`](sitemap.xml), [`robots.txt`](robots.txt) | Sitemap and crawler rules for search engines |
+| [`CNAME`](CNAME) | The custom domain for GitHub Pages |
 | [`favicon.svg`](favicon.svg), [`apple-touch-icon.png`](apple-touch-icon.png) | Orbit Store's app icon |
 | [`check.sh`](check.sh) | Downloads the releases, verifies them against `SHA256SUMS` and runs every check |
 | [`compare.py`](compare.py) | Compares application functions by source file, name and instructions |

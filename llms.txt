@@ -16,6 +16,19 @@ These were checked on 12 October 2026 against every BlackBox release still onlin
 - **Interface text.** 96 of the 466 longer English interface messages in Orbit 0.9.1 appear word for word in BlackBox.
 - **Licence.** BlackBox's README claims GPL-3.0-or-later and refers to a `LICENSE` file. The repository has no licence file and no source code. Its releases contain only `blackbox.elf` and `PPSA01453.ffpkg`.
 
+## Timeline
+
+Times are UTC, from GitHub and X.
+
+- 2 Oct 2026, 22:53: Orbit Store's public repository is created.
+- 3 Oct 2026, 14:40: Orbit Store's first public release, 0.2.0-beta.1.
+- 4 Oct 2026, 03:11: BlackBox's X account posts "New store coming soon".
+- 6 Oct 2026, 09:37: BlackBox's GitHub repository is created.
+- 6 Oct 2026, 10:36: BlackBox's update feed lists its first release, 1.0.0-beta.1.
+- 7 Oct 2026, 12:35: BlackBox announces its first beta on X.
+- 8 Oct 2026, 10:03: Orbit Store 0.9.1 is released.
+- 8 Oct 2026, 15:08: The files under BlackBox v1.0.5 and v1.0.6, both already published, are replaced with a new build.
+
 ## What is being asked
 
 Forks of Orbit are allowed under the GPL. To comply, BlackBox needs to:

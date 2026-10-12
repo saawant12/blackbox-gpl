@@ -165,6 +165,13 @@ blockquote { margin: 0 0 16px; padding: 0 0 0 14px; border-left: 3px solid var(-
 .posts iframe[src*="reddit"] { max-width: 550px; margin: 0 auto !important; display: block; }
 .posts blockquote.twitter-tweet { font-style: normal; color: var(--text); }
 .posts img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.timeline { list-style: none; padding: 0; margin: 20px 0 16px 6px; border-left: 2px solid var(--line); }
+.timeline li { position: relative; margin: 0; padding: 0 0 20px 22px; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before { content: ""; position: absolute; left: -8px; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--bg); border: 2px solid var(--link); }
+.timeline li.blackbox::before { border-color: var(--accent); }
+.timeline time { display: block; font-weight: 600; font-variant-numeric: tabular-nums; }
+.timeline a { white-space: nowrap; }
 /* What users say stands apart from the evidence around it. */
 #what-users-say { margin-top: 96px; padding-top: 32px; }
 .posts { margin-top: 32px; margin-bottom: 80px; }
@@ -288,6 +295,19 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
 
 <h3 id="licence">6. No source, no licence</h3>
 <p>BlackBox's README says it is licensed under GPL-3.0-or-later and refers to "the <code>LICENSE</code> file". The repository contains only <code>README.md</code>, <code>catalog</code> and <code>updates</code>. There is no licence file and no source code. Every release contains only <code>blackbox.elf</code> and <code>PPSA01453.ffpkg</code>.</p>
+
+<h2 id="timeline">Timeline</h2>
+<p>Times are UTC, taken from GitHub and X. Blue dots are Orbit Store, red dots are BlackBox.</p>
+<ol class="timeline">
+  <li class="orbit"><time datetime="2026-10-02T22:53Z">2 Oct, 22:53</time>Orbit Store's public repository is created. <a href="https://api.github.com/repos/saawant12/orbit-store-ps5">GitHub API</a></li>
+  <li class="orbit"><time datetime="2026-10-03T14:40Z">3 Oct, 14:40</time>Orbit Store's first public release, 0.2.0-beta.1. <a href="https://github.com/saawant12/orbit-store-ps5/releases/tag/v0.2.0-beta.1">Release</a></li>
+  <li class="blackbox"><time datetime="2026-10-04T03:11Z">4 Oct, 03:11</time>BlackBox's X account posts "New store coming soon". <a href="https://x.com/BlackBoxPS/status/2106582968139419747">Post</a></li>
+  <li class="blackbox"><time datetime="2026-10-06T09:37Z">6 Oct, 09:37</time>BlackBox's GitHub repository is created. <a href="https://api.github.com/repos/D3ATHLY/blackbox">GitHub API</a></li>
+  <li class="blackbox"><time datetime="2026-10-06T10:36Z">6 Oct, 10:36</time>BlackBox's update feed lists its first release, 1.0.0-beta.1. <a href="https://github.com/D3ATHLY/blackbox/commit/c83697575d49108a4c66ea495f9b5528413cff2a">Commit</a></li>
+  <li class="blackbox"><time datetime="2026-10-07T12:35Z">7 Oct, 12:35</time>BlackBox announces its first beta on X. <a href="https://x.com/BlackBoxPS/status/2107811990844420129">Post</a></li>
+  <li class="orbit"><time datetime="2026-10-08T10:03Z">8 Oct, 10:03</time>Orbit Store 0.9.1 is released. <a href="https://github.com/saawant12/orbit-store-ps5/releases/tag/v0.9.1">Release</a></li>
+  <li class="blackbox"><time datetime="2026-10-08T15:08Z">8 Oct, 15:08</time>The files under BlackBox v1.0.5 and v1.0.6, both already published, are replaced with a new build. <a href="https://github.com/D3ATHLY/blackbox/releases/tag/v1.0.5">Release</a></li>
+</ol>
 
 <h2 id="what-users-say">What users say</h2>
 <p>Posts from PS5 homebrew users who compared the two apps. These are their own words; the evidence above stands on its own.</p>
